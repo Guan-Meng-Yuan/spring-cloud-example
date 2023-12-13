@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: consumer-user
+  threads:
+    virtual:
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    enable-global-res: true
+dubbo:
+  application:
+    name: ${spring.application.name}
+  protocol:
+    port: -1
+  registry:
+    address: zookeeper://192.168.3.83:2181
+logging:
+  pattern:
+    dateformat: ${spring.jackson.date-format}.SSS

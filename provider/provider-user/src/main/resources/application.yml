@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: provider-user
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Aa123456#
+    url: jdbc:mysql://localhost:3306/spring_cloud_example
+dubbo:
+  application:
+    name: ${spring.application.name}
+  protocol:
+    port: -1
+  registry:
+    address: zookeeper://192.168.3.83:2181
+logging:
+  pattern:
+    dateformat: ${spring.jackson.date-format}.SSS
+  level:
+    com.guanmengyuan.spring.cloud.example.provider.mapper: debug
