@@ -16,6 +16,7 @@ dubbo:
     register-consumer: false
   protocol:
     port: -1
+    serialization: hessian2
   provider:
     loadbalance: shortestresponse
   consumer:

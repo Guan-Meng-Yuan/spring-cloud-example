@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 public class User extends BaseDomain<User> {
+    public User(){}
     private String username;
     private String password;
 }

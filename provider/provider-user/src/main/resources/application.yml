@@ -16,6 +16,7 @@ dubbo:
     register-mode: instance
   protocol:
     port: -1
+    serialization: hessian2
   provider:
     loadbalance: shortestresponse
   consumer:
@@ -23,4 +24,6 @@ dubbo:
     check: false
 logging:
   level:
-    com.guanmengyuan.spring.cloud.example.mapper: debug
+    com.guanmengyuan.spring.cloud.example.provider.mapper: debug
+    com.github.pagehelper: debug
+    com.mybatisflex: debug
