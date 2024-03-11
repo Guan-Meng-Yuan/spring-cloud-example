@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: user-provider
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.3.208:5432/spring-ex-demo
+    username: postgres
+    password: Aa123456#
+dubbo:
+  registry:
+    address: nacos://127.0.0.1:8848
+  metadata-report:
+    address: ${dubbo.registry.address}
+  application:
+    name: ${spring.application.name}
+    register-mode: instance
+  protocol:
+    port: -1
+  provider:
+    loadbalance: shortestresponse
+  consumer:
+    loadbalance: shortestresponse
+    check: false
+logging:
+  level:
+    com.guanmengyuan.spring.cloud.example.mapper: debug
